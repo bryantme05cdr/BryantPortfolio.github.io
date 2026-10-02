@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2>MyPortfolio</h2>
+
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+
+            <button id="menuBtn">☰</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section id="home" class="hero">
+            <div>
+                <p class="hello">Halo, saya</p>
+
+                <h1>Bryant Marcelo Emmanuel</h1>
+
+                <h2>Computer Science Student</h2>
+
+                <p>
+                    Life is about learning.
+                </p>
+
+                <a href="#projects" class="btn">
+                    Lihat Project
+                </a>
+            </div>
+        </section>
+
+
+        <!-- TENTANG -->
+        <section id="about">
+            <h2 class="title">Tentang Saya</h2>
+
+            <div class="about-content">
+
+                <div class="profile">
+                    👨‍💻
+                </div>
+
+                <div>
+                    <p>
+                        Saya adalah seorang yang tertarik pada dunia
+                        pemrograman dan pengembangan website.
+                    </p>
+
+                    <p>
+                        Saya sedang belajar dan mengembangkan kemampuan
+                        dalam HTML, CSS, JavaScript, serta teknologi web lainnya.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROJECT FOTO -->
+        <section id="projects">
+
+            <h2 class="title">Project Saya</h2>
+
+            <div class="gallery">
+
+                <div class="photo">
+                    <img src="images/project1.jpg" alt="Project 1">
+                </div>
+
+                <div class="photo">
+                    <img src="images/project2.jpg" alt="Project 2">
+                </div>
+
+                <div class="photo">
+                    <img src="images/project3.jpg" alt="Project 3">
+                </div>
+
+                <div class="photo">
+                    <img src="images/project4.jpg" alt="Project 4">
+                </div>
+
+                <div class="photo">
+                    <img src="images/project5.jpg" alt="Project 5">
+                </div>
+
+                <div class="photo">
+                    <img src="images/project6.jpg" alt="Project 6">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- KONTAK -->
+        <section id="contact">
+
+            <h2 class="title">Kontak</h2>
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Nama"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Pesan"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Kirim Pesan
+                </button>
+
+            </form>
+
+            <p id="formMessage"></p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Nama Kamu. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
