@@ -60,33 +60,25 @@
         </section>
 
         <!-- MINIGAME: NATURE DINO RUN -->
-        <section id="minigame">
-            <h2 class="title">Nature Dino Run</h2>
-            <div class="game-container">
-                <div class="game-score-board">
-                    <span>Score: <strong id="scoreVal">0</strong></span>
-                    <span>High Score: <strong id="highScoreVal">0</strong></span>
-                </div>
-                <div class="game-box" id="gameBox">
-                    <!-- Background Nature Elements -->
-                    <div class="nature-bg clouds"></div>
-                    <div class="nature-bg mountains"></div>
-                    <div class="nature-bg ground"></div>
-                    
-                    <!-- Dino -->
-                    <div id="dino"></div>
-                    <!-- Obstacle -->
-                    <div id="obstacle"></div>
-                    
-                    <!-- Game Overlay / Instructions -->
-                    <div id="gameOverlay" class="game-overlay">
-                        <h3>Nature Dino Run</h3>
-                        <p>Tekan <strong>Spasi</strong>, <strong>Panah Atas</strong>, atau <strong>Tap Layar</strong> untuk Melompat!</p>
-                        <button id="startBtn" class="btn">Mulai Game</button>
-                    </div>
-                </div>
+<section id="minigame">
+    <h2 class="title">Nature Dino Run</h2>
+    <div class="game-container">
+        <div class="game-score-board">
+            <span>Score: <strong id="scoreVal">0</strong></span>
+            <span>High Score: <strong id="highScoreVal">0</strong></span>
+        </div>
+        <div class="game-box" id="gameBox">
+            <canvas id="gameCanvas" aria-label="Game Nature Dino Run"></canvas>
+
+            <div id="gameOverlay" class="game-overlay">
+                <h3>Nature Dino Run</h3>
+                <p>Tekan <strong>Spasi</strong>, <strong>Panah Atas</strong>, atau <strong>Tap Layar</strong> untuk melompat!</p>
+                <button id="startBtn" class="btn">Mulai Game</button>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+                
 
         <!-- PROJECT FOTO -->
         <section id="projects">

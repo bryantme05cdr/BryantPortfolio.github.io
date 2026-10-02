@@ -14,13 +14,13 @@ body {
         linear-gradient(
             135deg,
             #0f172a,
-            #312e81,
+            #0800f9,
             #2121d6,
             #0f172a
         );
 
     background-size: 400% 400%;
-    animation: gradientMove 7s ease infinite;
+    animation: gradientMove 10s ease infinite;
 
     min-height: 100vh;
 }
@@ -223,120 +223,26 @@ section {
 .game-box {
     position: relative;
     width: 100%;
-    height: 280px;
-    background: linear-gradient(to bottom, #1e1b4b, #312e81);
+    aspect-ratio: 8 / 3;
     border-radius: 12px;
     overflow: hidden;
-    border: 2px solid rgba(168, 85, 247, 0.4);
+    background: #9bd4e8;
+    box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45);
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-.nature-bg {
-    position: absolute;
+.game-box canvas {
+    display: block;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.nature-bg.clouds {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2px);
-    background-size: 60px 60px;
-    animation: moveClouds 20s linear infinite;
-}
-
-@keyframes moveClouds {
-    from { background-position: 0 0; }
-    to { background-position: -600px 0; }
-}
-
-.nature-bg.mountains {
-    bottom: 40px;
-    height: 100px;
-    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
-    clip-path: polygon(0% 100%, 15% 60%, 30% 85%, 55% 40%, 75% 75%, 90% 50%, 100% 100%);
-    opacity: 0.6;
-}
-
-.nature-bg.ground {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(90deg, #166534, #15803d);
-    border-top: 4px solid #4ade80;
-}
-
-#dino {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    width: 45px;
-    height: 50px;
-    background: linear-gradient(135deg, #a855f7, #ec4899);
-    border-radius: 8px 12px 6px 6px;
-    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.5);
-    z-index: 2;
-}
-
-#dino::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    right: 4px;
-    width: 22px;
-    height: 20px;
-    background: #c084fc;
-    border-radius: 6px;
-}
-
-#dino::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 8px;
-    width: 4px;
-    height: 4px;
-    background: #0f172a;
-    border-radius: 50%;
-}
-
-.jump {
-    animation: dinoJump 0.45s cubic-bezier(0,0,0.2,1);
-}
-
-@keyframes dinoJump {
-    0% { bottom: 40px; }
-    50% { bottom: 140px; }
-    100% { bottom: 40px; }
-}
-
-#obstacle {
-    position: absolute;
-    bottom: 40px;
-    width: 25px;
-    height: 45px;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    border-radius: 6px 6px 2px 2px;
-    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
-    z-index: 2;
-}
-
-@keyframes moveObstacle {
-    0% { right: -30px; }
-    100% { right: 830px; }
-}
-
-.run-obstacle {
-    animation: moveObstacle 1.6s linear infinite;
+    touch-action: manipulation;
 }
 
 .game-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.85);
+    inset: 0;
+    background: rgba(10, 30, 20, 0.72);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -344,12 +250,12 @@ section {
     text-align: center;
     padding: 20px;
     z-index: 10;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
 }
 
 .game-overlay h3 {
     font-size: 26px;
-    color: #c4b5fd;
+    color: #bbf7d0;
     margin-bottom: 10px;
 }
 
@@ -362,6 +268,7 @@ section {
 .game-overlay .btn {
     margin-top: 0;
 }
+
 
 
 /* GALLERY PROJECT */
@@ -451,42 +358,25 @@ footer {
 
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 65px;
-        right: 20px;
-        flex-direction: column;
-        gap: 15px;
-        background: rgba(30,41,59,0.95);
-        padding: 20px;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
+    .game-container {
+        padding: 12px;
     }
 
-    nav ul.active {
-        display: flex;
+    .game-overlay {
+        padding: 8px;
     }
 
-    #menuBtn {
-        display: block;
+    .game-overlay h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
     }
 
-    .hero h1 {
-        font-size: 45px;
+    .game-overlay p {
+        font-size: 11px;
+        margin-bottom: 6px;
     }
 
-    .about-content {
-        flex-direction: column;
-        text-align: center;
+    .game-overlay .btn {
+        padding: 8px 18px;
+        font-size: 13px;
     }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .photo {
-        height: 250px;
-    }
-}
