@@ -15,12 +15,12 @@ body {
             135deg,
             #0f172a,
             #312e81,
-            #7c3aed,
+            #2121d6,
             #0f172a
         );
 
     background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
+    animation: gradientMove 7s ease infinite;
 
     min-height: 100vh;
 }
@@ -28,161 +28,114 @@ body {
 
 /* Animasi background */
 @keyframes gradientMove {
-
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
-
     100% {
         background-position: 0% 50%;
     }
-
 }
 
 
 /* NAVBAR */
-
 header {
     position: fixed;
     top: 0;
     width: 100%;
-
     background: rgba(15, 23, 42, 0.45);
-
     backdrop-filter: blur(12px);
-
     z-index: 1000;
-
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
 
 nav {
     max-width: 1100px;
     margin: auto;
-
     padding: 18px 20px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-
 nav h2 {
     color: #ffffff;
 }
 
-
 nav ul {
     display: flex;
-
     list-style: none;
-
     gap: 25px;
 }
 
-
 nav a {
     color: white;
-
     text-decoration: none;
-
     transition: 0.3s;
 }
-
 
 nav a:hover {
     color: #c4b5fd;
 }
 
-
 #menuBtn {
     display: none;
-
     background: none;
-
     border: none;
-
     color: white;
-
     font-size: 25px;
-
     cursor: pointer;
 }
 
 
 /* SECTION */
-
 section {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 100px 20px;
 }
 
-
 .title {
     text-align: center;
-
     margin-bottom: 40px;
-
     font-size: 32px;
-
     color: #ddd6fe;
 }
 
 
 /* HERO */
-
 .hero {
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
 }
 
-
 .hero h1 {
     font-size: 60px;
-
     margin: 10px 0;
-
     background: linear-gradient(
         90deg,
         #ffffff,
-        #c4b5fd,
+        #1e0582,
         #93c5fd
     );
-
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
-
 .hero h2 {
     font-size: 30px;
-
     margin-bottom: 15px;
-
     color: #ddd6fe;
 }
 
-
 .hero p {
     max-width: 600px;
-
     color: #e2e8f0;
 }
-
 
 .hello {
     color: #c4b5fd !important;
@@ -190,295 +143,350 @@ section {
 
 
 /* BUTTON */
-
 .btn {
     display: inline-block;
-
     margin-top: 25px;
-
     padding: 12px 25px;
-
     background: linear-gradient(
         90deg,
         #7c3aed,
         #2563eb
     );
-
     color: white;
-
     border: none;
-
     border-radius: 8px;
-
     font-weight: bold;
-
     text-decoration: none;
-
     cursor: pointer;
-
     transition: 0.3s;
-
     box-shadow: 0 5px 20px rgba(37,99,235,0.3);
 }
 
-
 .btn:hover {
     transform: translateY(-3px);
-
     box-shadow:
         0 10px 30px rgba(124,58,237,0.5);
 }
 
 
 /* ABOUT */
-
 .about-content {
     display: flex;
-
     align-items: center;
-
     gap: 40px;
 }
 
-
 .profile {
     min-width: 180px;
-
     height: 180px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     background: linear-gradient(
         135deg,
         #7c3aed,
         #2563eb
     );
-
     border-radius: 50%;
-
     font-size: 80px;
-
     box-shadow:
         0 10px 40px rgba(0,0,0,0.3);
 }
 
-
 .about-content p {
     margin-bottom: 15px;
-
     color: #e2e8f0;
 }
 
 
+/* MINIGAME NATURE DINO RUN */
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.game-score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #c4b5fd;
+    font-weight: bold;
+}
+
+.game-box {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(to bottom, #1e1b4b, #312e81);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(168, 85, 247, 0.4);
+}
+
+.nature-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nature-bg.clouds {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 2px);
+    background-size: 60px 60px;
+    animation: moveClouds 20s linear infinite;
+}
+
+@keyframes moveClouds {
+    from { background-position: 0 0; }
+    to { background-position: -600px 0; }
+}
+
+.nature-bg.mountains {
+    bottom: 40px;
+    height: 100px;
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    clip-path: polygon(0% 100%, 15% 60%, 30% 85%, 55% 40%, 75% 75%, 90% 50%, 100% 100%);
+    opacity: 0.6;
+}
+
+.nature-bg.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, #166534, #15803d);
+    border-top: 4px solid #4ade80;
+}
+
+#dino {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 45px;
+    height: 50px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 8px 12px 6px 6px;
+    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.5);
+    z-index: 2;
+}
+
+#dino::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    width: 22px;
+    height: 20px;
+    background: #c084fc;
+    border-radius: 6px;
+}
+
+#dino::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    width: 4px;
+    height: 4px;
+    background: #0f172a;
+    border-radius: 50%;
+}
+
+.jump {
+    animation: dinoJump 0.45s cubic-bezier(0,0,0.2,1);
+}
+
+@keyframes dinoJump {
+    0% { bottom: 40px; }
+    50% { bottom: 140px; }
+    100% { bottom: 40px; }
+}
+
+#obstacle {
+    position: absolute;
+    bottom: 40px;
+    width: 25px;
+    height: 45px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-radius: 6px 6px 2px 2px;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+    z-index: 2;
+}
+
+@keyframes moveObstacle {
+    0% { right: -30px; }
+    100% { right: 830px; }
+}
+
+.run-obstacle {
+    animation: moveObstacle 1.6s linear infinite;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.game-overlay h3 {
+    font-size: 26px;
+    color: #c4b5fd;
+    margin-bottom: 10px;
+}
+
+.game-overlay p {
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+}
+
+.game-overlay .btn {
+    margin-top: 0;
+}
+
+
 /* GALLERY PROJECT */
-
 .gallery {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-
 .photo {
-
     height: 250px;
-
     overflow: hidden;
-
     border-radius: 15px;
-
     background: rgba(255,255,255,0.1);
-
     border: 1px solid rgba(255,255,255,0.15);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.25);
-
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     transition: 0.4s;
 }
 
-
 .photo img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     display: block;
-
     transition: 0.5s;
 }
 
-
 .photo:hover {
-
     transform: translateY(-8px);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
-
 .photo:hover img {
-
     transform: scale(1.08);
 }
 
 
 /* CONTACT */
-
 form {
-
     max-width: 600px;
-
     margin: auto;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
 }
 
-
 input,
 textarea {
-
     padding: 15px;
-
     border: 1px solid rgba(255,255,255,0.15);
-
     border-radius: 8px;
-
     background: rgba(15,23,42,0.5);
-
     color: white;
-
     outline: none;
-
     backdrop-filter: blur(5px);
 }
 
-
 input::placeholder,
 textarea::placeholder {
-
     color: #cbd5e1;
 }
 
-
 input:focus,
 textarea:focus {
-
     border-color: #a78bfa;
 }
 
-
 textarea {
-
     min-height: 150px;
-
     resize: vertical;
 }
 
-
 #formMessage {
-
     text-align: center;
-
     margin-top: 20px;
-
     color: #ddd6fe;
 }
 
 
 /* FOOTER */
-
 footer {
-
     text-align: center;
-
     padding: 25px;
-
     background: rgba(2,6,23,0.5);
-
     color: #cbd5e1;
 }
 
 
 /* RESPONSIVE */
-
 @media (max-width: 768px) {
-
     nav ul {
-
         display: none;
-
         position: absolute;
-
         top: 65px;
-
         right: 20px;
-
         flex-direction: column;
-
         gap: 15px;
-
         background: rgba(30,41,59,0.95);
-
         padding: 20px;
-
         border-radius: 10px;
-
         backdrop-filter: blur(10px);
     }
 
-
     nav ul.active {
-
         display: flex;
     }
 
-
     #menuBtn {
-
         display: block;
     }
 
-
     .hero h1 {
-
         font-size: 45px;
     }
 
-
     .about-content {
-
         flex-direction: column;
-
         text-align: center;
     }
 
-
     .gallery {
-
         grid-template-columns: 1fr;
     }
 
-
     .photo {
-
         height: 250px;
     }
-
 }
